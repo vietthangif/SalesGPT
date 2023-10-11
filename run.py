@@ -34,7 +34,7 @@ if __name__ == "__main__":
     verbose = args.verbose
     max_num_turns = args.max_num_turns
 
-    llm = ChatLiteLLM(temperature=0.2, model_name="gpt-3.5-turbo-instruct")
+    llm = ChatLiteLLM(temperature=0.2, model_name="gpt-3.5-turbo")
 
     if config_path == "":
         print("No agent config specified, using a standard config")
@@ -67,9 +67,10 @@ if __name__ == "__main__":
         sales_agent.step()
 
         # end conversation
-        if "<END_OF_CALL>" in sales_agent.conversation_history[-1]:
-            print("Sales Agent determined it is time to end the conversation.")
-            break
+        # if "<END_OF_CALL>" in sales_agent.conversation_history[-1]:
+        #     print("Sales Agent determined it is time to end the conversation.")
+        #     break
+
         human_input = input("Your response: ")
         sales_agent.human_step(human_input)
         print("=" * 10)
