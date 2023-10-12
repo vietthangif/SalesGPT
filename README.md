@@ -137,6 +137,10 @@ Make sure your have a **python 3.10+** and run:
 
 `pip install -r requirements.txt`
 
+or
+
+`python3 -m pip install -r requirements.txt`
+
 Create `.env` file and put your API keys there by specifying a line, for instance: 
 
 `OPENAI_API_KEY=sk-xxx`
